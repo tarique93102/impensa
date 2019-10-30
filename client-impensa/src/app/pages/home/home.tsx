@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './home.scss';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 interface HomeProps {};
 
 interface HomeState {};
 
-class Home extends Component<HomeProps, HomeState> {
+class Home extends Component<HomeProps & RouteComponentProps, HomeState> {
     render() {
+        console.log(this.props);
         return(
             <div>
                 Home Page
@@ -15,4 +17,6 @@ class Home extends Component<HomeProps, HomeState> {
     }
 } 
 
-export default Home;
+const HomePage = withRouter(Home);
+
+export default HomePage;

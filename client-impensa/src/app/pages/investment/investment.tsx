@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './investment.scss';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 interface InvestmentProps {};
 
 interface InvestmentState {};
 
-class Investment extends Component<InvestmentProps, InvestmentState> {
+class Investment extends Component<InvestmentProps & RouteComponentProps, InvestmentState> {
     render() {
         return(
             <div>
@@ -15,4 +16,6 @@ class Investment extends Component<InvestmentProps, InvestmentState> {
     }
 } 
 
-export default Investment;
+const InvestmentPage = withRouter(Investment);
+
+export default InvestmentPage;
